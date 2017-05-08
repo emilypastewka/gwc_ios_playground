@@ -13,26 +13,11 @@ class ViewController: UIViewController,UITextFieldDelegate {
     //MARK: Properties
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var nameTextField: UITextField!
-    
-    
-    //MARK: UITextFieldDelegate
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    var newText = String()
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        newText = textField.text!
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        nameTextField.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,8 +27,6 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     //MARK: Actions
     @IBAction func labelButton(_ sender: UIButton) {
-        //nameLabel.text = nameTextField.text
-        nameLabel.text = newText
     }
 			
 

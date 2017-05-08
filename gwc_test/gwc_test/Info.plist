@@ -34,6 +34,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>Questions Activities</key>
+	<array>
+		<string>What did you do today?</string>
+		<string>Where did you go today?</string>
+	</array>
+	<key>Questions Emotions</key>
+	<array>
+		<string>Why do you feel the way you are?</string>
+		<string>How are you feeling?</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
