@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionViewController: UIViewController {
+class QuestionViewController: UITableViewController {
 
      //MARK: Properties
     
@@ -18,11 +18,55 @@ class QuestionViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Do other work
+        }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Table view data source
+    
+    let emotionsArray = ["How do you feel right now?"]
+    
+    let activitiesArray = ["What did you do today?","Who did you enjoy spending time with today?"]
+    
+    var questionsArray: [[String]] = [[]]
+    
+    let emotionsAnswersArray = [["😍","😀","🙂","🙄","🤢","☹️","😭","😡"]]
+    
+    let activitiesAnswersArray = [["⛵️","⚽️","📚"],["Family","Friends","Myself"]]
+
+    //MARK: TableView methods
+    
+    // gives N sections in tableview
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
+    }
+    
+    // gives N rows per table section
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
+    }
+    
+    // Names each section
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+    }
+    
+    // returns a cell for the tableview
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
+    
+}
     
 
     /*
