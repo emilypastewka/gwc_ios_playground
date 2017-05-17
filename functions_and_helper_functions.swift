@@ -81,7 +81,13 @@ nextPeriodWithException(period: 1, exceptionStudent: "Bob", exceptionClass: "Mat
 // If Eva doesn't take Physics, when does she have a free period?
 nextPeriodWithException(period: 5, exceptionStudent: "Eva", exceptionClass: "Physics")
 
-// Can you write a function to figure that out?
+// Can you write a loop to figure that out?
+for i in 1...nPeriods {
+    var nextPeriodWithExceptionArray = nextPeriodWithException(period: i, exceptionStudent: "Eva", exceptionClass: "Physics")
+    print("In period " + String(i) + " " + nextPeriodWithExceptionArray[4])
+}
+
+// Can you write a function using that for loop to return just the period she's free?
 func whichPeriodIsFree(exceptionStudent: String, exceptionClass: String) -> Int {
     var returnPeriod: Int = 0
     for i in 1...nPeriods {
