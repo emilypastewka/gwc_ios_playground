@@ -8,10 +8,11 @@
 
 import UIKit
 
-class QuestionViewController: UITableViewController {
+class QuestionTableViewController: UITableViewController {
 
      //MARK: Properties
     
+    var questions = [Question]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,7 @@ class QuestionViewController: UITableViewController {
     
     let activitiesAnswersArray = [["⛵️","⚽️","📚"],["Family","Friends","Myself"]]
 
-    //MARK: TableView methods
+    // MARK: TableView methods
     
     // gives N sections in tableview
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,8 +67,6 @@ class QuestionViewController: UITableViewController {
         
     }
     
-}
-    
 
     /*
     // MARK: - Navigation
@@ -78,5 +77,39 @@ class QuestionViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
+    // MARK: Private Methods
+    
+    private func loadQuestions() {
+        
+    }
+    
+    
+    
+    let activitiesArray = ["What did you do today?","Who did you enjoy spending time with today?"]
+    
+    let emotionsAnswersArray = [["😍","😀","🙂","🙄","🤢","☹️","😭","😡"]]
+    
+    
+    var x = activitiesArray[0]
+    
+    for i in activitiesArray.length {
+        var myQuestion = (activitiesArray[i]
+    , answerChoices = ["x","y"]
+    , answerSeelction = "")
+    }
+    
+    for activity in activitiesArray {
+    var myQuestion = Question(activity
+    , answerChoices = ["x","y"]
+    , answerSeelction = "")
+    }
+    
+    
+    
 
 }
+
+
