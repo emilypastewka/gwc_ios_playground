@@ -100,7 +100,7 @@ func whichPeriodIsFree(exceptionStudent: String, exceptionClass: String) -> Int 
         var nextPeriodWithExceptionArray = nextPeriodWithException(period: i, exceptionStudent: exceptionStudent, exceptionClass: exceptionClass)
         for i in 1...nPeriods {
             var periodWithException = nextPeriodWithExceptionArray[i-1]
-            if periodWithException.range(of: "free") != nil {
+            if periodWithException.contains("free") != nil {
                 returnPeriod = i
             }
         }
@@ -110,4 +110,70 @@ func whichPeriodIsFree(exceptionStudent: String, exceptionClass: String) -> Int 
 
 // Checkpoint: call function
 whichPeriodIsFree(exceptionStudent: "Eva", exceptionClass: "Physics")
+
+// Can you generalize that function to show us what period any class occurs?
+func whichPeriodIsClassX(studentInQuestion: String, classInQuestion: String) -> Int {
+    var returnPeriod: Int = 0
+    for i in 1...nPeriods {
+        var nextPeriodWithExceptionArray = nextPeriodWithException(period: i, exceptionStudent: studentInQuestion, exceptionClass: "")
+        for i in 1...nPeriods {
+            var periodWithException = nextPeriodWithExceptionArray[i-1]
+            if (periodWithException.contains(classInQuestion) != nil && periodWithException.range(of: studentInQuestion) != nil) {
+                returnPeriod = i
+            }
+        }
+    }
+    return returnPeriod
+}
+
+// Checkpoint: call function
+whichPeriodIsClassX(studentInQuestion: "Eva", classInQuestion: "Physics")
+
+
+// If we run out of time, show them buggy implementations and ask to find my bugs
+
+// For loop. Bug here = not choosing the correct element of the array in line 3
+for i in 1...nPeriods {
+    var nextPeriodWithExceptionArray = nextPeriodWithException(period: i, exceptionStudent: "Eva", exceptionClass: "Physics")
+    print("In period " + String(i) + " " + nextPeriodWithExceptionArray)
+}
+
+// Free period function. Bug here = line 7, == instead of .contains
+func whichPeriodIsFree(exceptionStudent: String, exceptionClass: String) -> Int {
+    var returnPeriod: Int = 0
+    for i in 1...nPeriods {
+        var nextPeriodWithExceptionArray = nextPeriodWithException(period: i, exceptionStudent: exceptionStudent, exceptionClass: exceptionClass)
+        for i in 1...nPeriods {
+            var periodWithException = nextPeriodWithExceptionArray[i-1]
+            if (periodWithException == "free") {
+                returnPeriod = i
+            }
+        }
+    }
+    return returnPeriod
+}
+
+// Generalized function. Bug here = missing BOTH conditions in line 7
+func whichPeriodIsClassX(studentInQuestion: String, classInQuestion: String) -> Int {
+    var returnPeriod: Int = 0
+    for i in 1...nPeriods {
+        var nextPeriodWithExceptionArray = nextPeriodWithException(period: i, exceptionStudent: studentInQuestion, exceptionClass: "")
+        for i in 1...nPeriods {
+            var periodWithException = nextPeriodWithExceptionArray[i-1]
+            if (periodWithException.contains(classInQuestion) != nil) {
+                returnPeriod = i
+            }
+        }
+    }
+    return returnPeriod
+}
+
+
+
+
+
+
+
+
+
 
