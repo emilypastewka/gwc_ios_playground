@@ -8,16 +8,6 @@
 
 import Foundation
 
-//
-//  swift_functions.swift
-//
-//
-//  Created by Emily Bailey on 5/17/17.
-//
-//
-
-import Foundation
-
 // Create variables
 let classArray = ["Physics","Math","English","CompSci","Government","Statistics","Chemistry","History"]
 let studentArray = ["Ashley","Bob","Cat","Dan","Eva","Frank","George","Hal"]
