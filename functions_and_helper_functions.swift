@@ -8,13 +8,16 @@
 
 import Foundation
 
+// In this workflow, we're thinking about a school and trying to figure out when students go to their classes.
+// IMPORTANT: This is a school with 1-on-1 teaching only, so students go to class alone! Only one student per class per period
+
 // Create variables
 let classArray = ["Physics","Math","English","CompSci","Government","Statistics","Chemistry","History"]
 let studentArray = ["Ashley","Bob","Cat","Dan","Eva","Frank","George","Hal"]
 let nPeriods: Int! = classArray.count
 let nStudents: Int! = studentArray.count
 
-// Check that we have the right number of students and classesShifted
+// Check that we have the right number of students and classes
 nPeriods==nStudents
 
 // Helper function
@@ -32,7 +35,7 @@ func shiftClasses(shiftPeriods: Int) -> [String] {
     return classesShifted
 }
 
-// Call function
+// Checkpoint: call function
 shiftClasses(shiftPeriods: 1)
 
 
@@ -51,7 +54,7 @@ func nextPeriod(period: Int) -> [String] {
     return nextPeriodArray
 }
 
-// Call function
+// Checkpoint: call function
 nextPeriod(period: 1)
 
 
@@ -74,9 +77,12 @@ func nextPeriodWithException(period: Int, exceptionStudent: String, exceptionCla
     return nextPeriodWithExceptionArray
 }
 
-// Call function
+// Checkpoint: call function
 nextPeriodWithException(period: 1, exceptionStudent: "Bob", exceptionClass: "Math")
 
+
+
+// CHALLENGE
 
 // If Eva doesn't take Physics, when does she have a free period?
 nextPeriodWithException(period: 5, exceptionStudent: "Eva", exceptionClass: "Physics")
@@ -102,10 +108,6 @@ func whichPeriodIsFree(exceptionStudent: String, exceptionClass: String) -> Int 
     return returnPeriod
 }
 
-// Call function
+// Checkpoint: call function
 whichPeriodIsFree(exceptionStudent: "Eva", exceptionClass: "Physics")
-
-
-
-
 
